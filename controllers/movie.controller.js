@@ -16,6 +16,7 @@ exports.findById = async (req, res) => {
   try {
     const movie = await movieService.findById(req.params.id);
     let htmlContent = `
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
       <div>
         <h1>${movie.title}</h1>
         <p>${movie._id}</p>
@@ -65,6 +66,7 @@ exports.findAll = async (req, res) => {
     const movies = await movieService.findAll();
     res.status(200).send(movies.map(movie => {
       return `
+      <link rel="stylesheet" type="text/css" href="css/style.css">
         <div>
           <h1>${movie.title}</h1>
           <p>${movie._id}</p>
