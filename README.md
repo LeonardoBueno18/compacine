@@ -17,7 +17,7 @@ Este guia irá ajudá-lo a configurar e executar o projeto Compacine em seu ambi
 
    Primeiro, clone o repositório do projeto para sua máquina local usando o Git:
 
-    git clone <URL_DO_REPOSITÓRIO>
+    git clone <https://github.com/LeonardoBueno18/compacine.git>
 
 2. **Instale as dependências**
 
