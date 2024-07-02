@@ -1,5 +1,4 @@
 const Movie = require('../models/movie.model');
-const Session = require('../models/session.model');
 
 exports.create = async (data) => {
   const Movie = new movie(data);
