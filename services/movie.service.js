@@ -1,5 +1,5 @@
-const Movie = require('../models/Movie');
-const Session = require('../models/Session');
+const Movie = require('../models/movie.model');
+const Session = require('../models/session.model');
 
 exports.create = async (data) => {
   const Movie = new movie(data);
@@ -30,18 +30,16 @@ exports.buyTicket = async (id, session_id, ticket_id) => {
     if (session_id === session.id.toString()) {
       for (const ticket of session.tickets) {
         if (ticket._id.toString() === ticket_id && ticket.available) {
-          ticket.available = false; // Marca o ticket como não disponível
+          ticket.available = false;
           ticketPurchased = true;
           purchasedTicketDetails = `Ingresso comprado com sucesso! Assento: ${ticket.seat}, Preço: ${ticket.price}`;
-          break; // Sai do loop de tickets uma vez que o ticket foi comprado
+          break;
         }
       }
 
       if (ticketPurchased) {
-        // Atualiza o campo capability para refletir o número atual de tickets disponíveis
         session.capability = session.tickets.filter(ticket => ticket.available).length;
-
-        await session.save(); // Salva a sessão com o ticket atualizado e o capability atualizado
+        await session.save();
         return purchasedTicketDetails;
       } else {
         throw new Error('Ingresso indisponível');

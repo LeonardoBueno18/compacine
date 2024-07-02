@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const movieRoutes = require('./routes/movieRoutes');
-const sessionRoutes = require('./routes/sessionRoutes');
-const Movie = require('./models/Movie');
-const Session = require('./models/Session');
+const movieRoutes = require('./routes/movie.routes');
+const sessionRoutes = require('./routes/session.routes');
+const Movie = require('./models/movie.model');
+const Session = require('./models/session.model');
 const path = require("path");
 require('dotenv').config();
 
