@@ -52,7 +52,7 @@ function generateSessionHtml(session, movieId) {
   session.tickets.forEach(ticket => {
     sessionHtml += ticket.available ? `
       <form action="buy-ticket/${movieId}/${session._id}/${ticket._id}" method="post">
-        <button type="submit">Comprar Ingresso ${ticket.seat}</button>
+        <button type="submit">Comprar Ingresso ${ticket.seat} R$ ${ticket.price}</button>
       </form>
     ` : `<p>Ingresso ${ticket.seat} indisponível</p>`;
   });
