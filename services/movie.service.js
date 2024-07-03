@@ -1,9 +1,9 @@
 const Movie = require('../models/movie.model');
 
 exports.create = async (data) => {
-  const Movie = new movie(data);
-  await Movie.save();
-  return Movie;
+  const movie = new Movie(data);
+  await movie.save();
+  return movie;
 };
 
 exports.findAll = async () => {

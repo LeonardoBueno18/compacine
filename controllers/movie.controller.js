@@ -8,7 +8,7 @@ exports.create = async (req, res) => {
     res.json(movie);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Erro ao criar movie' });
+    res.status(500).json({ message: 'Erro ao criar filme' });
   }
 };
 
