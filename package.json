@@ -1,6 +1,6 @@
 {
   "name": "compacine",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "cinema compass",
   "main": "app.js",
   "scripts": {
